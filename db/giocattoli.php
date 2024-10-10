@@ -1,5 +1,5 @@
 <?php 
-include __DIR__ .'../prodotto.php';
+
     class Toys extends Product{
         
         public $material;

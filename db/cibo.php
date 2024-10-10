@@ -1,27 +1,25 @@
-
 <?php 
-include_once __DIR__ .'../prodotto.php';
-    class Home extends Product{
+    
+    class Food extends Product{
         
-        public $material;
-        public $size;
-        
+        public $ingredients;
+        public $brand;
+       
         public function __construct(
             string $name,
             string $image,
             float $price,
             string $category,
             string $available,
-            string $material,
-            string $size
+            string $ingredients,
+            string $brand
 
         ){
             
-            $this->material = $material;
-            $this->size = $size;
+            $this->ingredients = $ingredients;
+            $this->brand = $brand;
             parent ::__construct($name, $image, $price, $category, $available);
         }
 
     }
-    
-?>    
+?>
