@@ -1,13 +1,21 @@
 <?php 
+require_once __DIR__ .'/cucce.php';
+require_once __DIR__ .'/giocattoli.php';
+require_once __DIR__ .'/categories.php';
+    
+class PriceError extends Exception {
 
-    class Product{
+}
+ 
+class Product{
         
         public $name;
         public $image;
         public $price;
         public $category;
         public $available;
-        
+
+       
         public function __construct(
 
             string $name,
@@ -20,10 +28,30 @@
             
             $this->name = $name;
             $this->image = $image;
-            $this->price = $price;
-            $this->category = $category; 
-            $this->available = $available;     
+            $this->price = $price;    
+            if($category == 'Cani' || $category == 'Gatti'){
+                $this->category = $category; 
+            }
+            else {
+
+                
+                throw new PriceError('Categoria inserita non presente nell\'E-Commerce');
+            }
+        
+            
+            $this->available = $available; 
         }
 
+        
+
+    }
+
+    trait Material {
+        public $material;
+    
+        public function getMaterial(){
+    
+            return $this->material;
+        }
     }
 ?>

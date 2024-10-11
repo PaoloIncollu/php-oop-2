@@ -2,7 +2,7 @@
 
     class Toys extends Product{
         
-        public $material;
+        use Material;
         public $form;
         
         public function __construct(

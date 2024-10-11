@@ -8,16 +8,18 @@ require_once __DIR__ .'/db/categories.php';
 
 
 
+try {
 
-   $products_home = [
-    new Home ('Reggia Superior', 'https://www.focusjunior.it/content/uploads/site_stored/imgs/0003/046/1hacienda.jpg', '1298.99', 'cani' , 'In Quantità', 'Cemento e Mattoni', 'M: L120 x P62 x H153 cm '),
+$products_home = [
+    
+    new Home ('Reggia Superior', 'https://www.focusjunior.it/content/uploads/site_stored/imgs/0003/046/1hacienda.jpg', '1299.99', 'Cani' , 'In Quantità', 'Cemento e Mattoni', 'M: L120 x P62 x H153 cm '),
     new Home ('Cuccia Domus', 'https://arcaplanet.vtexassets.com/arquivos/ids/227349/canile-domus-mini.jpg?v=637454792222500000', '98.29' , 'Gatti', 'In Quantità', 'Legno', 'M: L30 x P42 x H60 cm ')
 
-   ];
+];
 
 $products_food= [
 
-    new Food ('Ultima Cat Adult', 'https://media.zooplus.com/bilder/8/400/203613_pla_affinityspain_ultima_cat_adunlt_huhn_es_10kg_hs_01_8.jpg', '40.50', 'Gatti', 'In Assortimento', 'Pollo', 'Ultima'),
+    new Food ('Ultima Cat Adult', 'https://media.zooplus.com/bilder/8/400/203613_pla_affinityspain_ultima_cat_adunlt_huhn_es_10kg_hs_01_8.jpg', '25.90', 'Gatti', 'In Assortimento', 'Pollo', 'Ultima'),
     new Food ('Maxi adult 15 kg', 'https://www.albericianimalifelici.it/shop/sysimages/thumbnails/300x300_images_royal_canin_maxi_adult.jpg', '55.99', 'Cani', 'Limitata', 'Carne Mista', 'Royal Canin')
 ];
 
@@ -25,10 +27,14 @@ $products_toys= [
 
     new Toys ('Maialino', 'https://media.zooplus.com/bilder/2/400/60797_pla_latexschwein_large_fg_5575_2.jpg', '5.68', 'Cani', 'In Assortimento', 'Lattice', 'Animale'),
     new Toys ('Gomitolo', 'https://media.zooplus.com/bilder/2/400/212927_pla_karlie_sisal_spielbaelle_mit_feder_rasseln_blau_2.jpg', '9.89', 'Gatti', 'Limitata', 'Cotone', 'Palla')
-] ;
+];
 
+}
+ 
 
-    
+catch(PriceError $e){
+    echo '<h4 style="color: red;">ERRORE: '.$e->getMessage().'</h4>';
+}
 
 
 ?>

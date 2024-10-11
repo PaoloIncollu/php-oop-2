@@ -3,7 +3,7 @@
 
     class Home extends Product{
         
-        public $material;
+        use Material;
         public $size;
         
         public function __construct(
