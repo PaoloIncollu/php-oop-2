@@ -3,7 +3,7 @@ require_once __DIR__ .'/cucce.php';
 require_once __DIR__ .'/giocattoli.php';
 require_once __DIR__ .'/categories.php';
     
-class PriceError extends Exception {
+class CategoryNameError extends Exception {
 
 }
  
@@ -35,7 +35,7 @@ class Product{
             else {
 
                 
-                throw new PriceError('Categoria inserita non presente nell\'E-Commerce');
+                throw new CategoryNameError('Categoria inserita non presente nell\'E-Commerce');
             }
         
             

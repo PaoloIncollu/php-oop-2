@@ -32,7 +32,7 @@ $products_toys= [
 }
  
 
-catch(PriceError $e){
+catch(CategoryNameError $e){
     echo '<h4 style="color: red;">ERRORE: '.$e->getMessage().'</h4>';
 }
 
